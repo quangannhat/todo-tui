@@ -9,6 +9,20 @@ bun install
 bun run dev
 ```
 
+## Install a standalone binary
+
+Build and install a self-contained executable into `~/.local/bin`:
+
+```sh
+bun install
+bun run install:binary
+```
+
+The installed binary does not need Bun at runtime. Ensure `~/.local/bin` is on
+your `PATH`. To choose another destination, set `TODO_TUI_INSTALL_DIR`. To only
+build without installing, run `bun run build:binary`; the executable is written
+to `dist/todo-tui`.
+
 Tasks are stored separately for each Git repository under
 `~/.local/share/todo-tui/repositories/`. Outside a Git repository, the current
 directory is used as the scope. Set `TODO_TUI_DATA_DIR` to change the data

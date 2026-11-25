@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "bun --watch src/index.tsx",
     "start": "bun run src/index.tsx",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:binary": "bun run dev/build-binary.ts",
+    "install:binary": "bun run dev/install-binary.ts"
   },
   "bin": {
     "todo-tui": "src/index.tsx"

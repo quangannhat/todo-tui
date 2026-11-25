@@ -7,6 +7,22 @@ import { currentRepository, loadTodos, saveTodos, sendNotification, type Todo } 
 process.env.OTUI_USE_ALTERNATE_SCREEN = "true"
 
 const args = process.argv.slice(2)
+if (args[0] === "--version" || args[0] === "-v" || args[0] === "version") {
+  console.log("todo-tui 0.1.0")
+  process.exit(0)
+}
+if (args[0] === "--help" || args[0] === "-h" || args[0] === "help") {
+  console.log(`todo-tui — repository-scoped terminal todo list
+
+Usage:
+  todo-tui                         Open the TUI
+  todo-tui task list [--repo PATH]
+  todo-tui task add <title> [--description TEXT] [--repo PATH]
+  todo-tui task done <id> [--repo PATH]
+  todo-tui task delete <id> [--repo PATH]
+  todo-tui --version`)
+  process.exit(0)
+}
 if (args[0] === "task") {
   const action = args[1]
   const repoFlag = args.indexOf("--repo")
